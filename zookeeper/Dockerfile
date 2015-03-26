@@ -16,6 +16,8 @@ RUN wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-${ZK_VERSION
     && mv /opt/zookeeper-${ZK_VERSION} /opt/zookeeper \
     && cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg \
     && mkdir -p /tmp/zookeeper
+    
+# /tmp/zookeeper has zookeeper's data directory
 
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 
@@ -27,3 +29,4 @@ VOLUME ["/opt/zookeeper/conf", "/tmp/zookeeper"]
 
 ENTRYPOINT ["/opt/zookeeper/bin/zkServer.sh"]
 CMD ["start-foreground"]
+
