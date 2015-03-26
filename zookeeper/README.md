@@ -3,6 +3,7 @@ RUN
 ===
 
 ```
+# docker build -t zookeeper .
 # docker run -v /opt/zk-1/conf:/opt/zookeeper/conf -v /opt/zk-1/data:/tmp/zookeeper  zookeeper
 ```
 
